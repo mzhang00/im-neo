@@ -24,15 +24,18 @@ def print_matrix( matrix ):
 def ident( matrix ):
     for r in range(len(matrix)):
         for c in range(len(matrix)):
+            matrix[r][c] = 0
             if r == c:
                 matrix[r][c] = 1
-            else:
-                matrix[r][c] = 0
 
 #multiply m1 by m2, modifying m2 to be the product
 #m1 * m2 -> m2
+#FINISH LATA: NOT DONE !!!
 def matrix_mult( m1, m2 ):
-    pass
+    m3 = [][]
+    for a in range(len(m1)):
+        for b in range(len(m2)):
+            m3[a][b] = 1
 
 
 
@@ -42,5 +45,22 @@ def new_matrix(rows = 4, cols = 4):
     for c in range( cols ):
         m.append( [] )
         for r in range( rows ):
+            # m[c].append( 2 )
+            m[c].append( 0 )
+    return m
+
+def new_matrix2(rows = 4, cols = 4):
+    m = []
+    for c in range( cols ):
+        m.append( [] )
+        for r in range( rows ):
             m[c].append( 2 )
+    return m
+
+def new_matrix3(rows = 4, cols = 4):
+    m = []
+    for c in range( cols ):
+        m.append( [] )
+        for r in range( rows ):
+            m[c].append( 3 )
     return m
