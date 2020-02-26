@@ -16,7 +16,7 @@ def print_matrix( matrix ):
     for r in matrix:
         for c in r:
             row = row + str(c) + " "
-        print row[:-1]
+        print(row[:-1])
         row = ""
 
 #turn the paramter matrix into an identity matrix
@@ -30,22 +30,22 @@ def ident( matrix ):
 
 #multiply m1 by m2, modifying m2 to be the product
 #m1 * m2 -> m2
-#FINISH LATA: NOT DONE !!!
 def matrix_mult( m1, m2 ):
-    m3 = [][]
-    for a in range(len(m1)):
-        for b in range(len(m2)):
-            m3[a][b] = 1
-
-
-
+    m3 = new_matrix(len(m1[0]), len(m2))
+    for r in range(len(m1[0])):
+        for c in range(len(m2)):
+            m3[c][r] = 0
+            for i in range(len(m1[0])):
+                m3[c][r] += m1[i][r] * m2[c][i]
+    for r in range(len(m3[0])):
+        for c in range(len(m3)):
+            m2[c][r] = m3[c][r]
 
 def new_matrix(rows = 4, cols = 4):
     m = []
     for c in range( cols ):
         m.append( [] )
         for r in range( rows ):
-            # m[c].append( 2 )
             m[c].append( 0 )
     return m
 
